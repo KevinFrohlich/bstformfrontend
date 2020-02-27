@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+/* Navigation link styles */
+nav a {
+  padding: 8px 10px;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited,
+a:link {
+  color: #607d8b;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #cfd8dc;
+}
+nav a.active {
+  color: #039be5;
+}
