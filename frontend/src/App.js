@@ -8,6 +8,8 @@ import Posts from "./components/Posts";
 import Editposts from "./components/Editdrafts";
 import Editdrafts from "./components/Editdrafts";
 import Editprofile from "./components/Editprofile";
+import Imageupload from "./components/Imageupload";
+import AdminEditUser from "./components/Adminedituser";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -31,6 +33,8 @@ const App = () => (
       <Route path="/editposts" component={Editposts} />
       <Route path="/editdrafts" component={Editdrafts} />
       <Route path="/editprofile" component={Editprofile} />
+      <Route path="/imageupload" component={Imageupload} />
+      <Route path="/adminedituser" component={AdminEditUser} />
     </div>
   </Router>
 );

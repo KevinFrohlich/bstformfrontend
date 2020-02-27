@@ -46,7 +46,7 @@ class Login extends Component {
         console.log(res);
         const data = res.data;
         axios.defaults.headers.common["Authorization"] = data;
-        sessionStorage.setItem("login", data);
+        sessionStorage.setItem("token", res.data);
         if (data) {
           this.props.history.push("/Profile");
         }
@@ -89,7 +89,6 @@ class Login extends Component {
               Submit
             </button>
             <br />
-            <hr />
           </div>
         </form>
       </React.Fragment>

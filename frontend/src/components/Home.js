@@ -8,29 +8,25 @@ import "../styles/index.css";
 const Home = () => (
   <div>
     <h2>Welcome to BST Forum</h2>
-    <p>
-      Please Create an Account{" "}
-      <Router>
-        <div>
-          <nav>
-            <Link to="/signup">Signup</Link>
-          </nav>
-          <Route path="/signup" component={Signup} />
-        </div>
-      </Router>
-    </p>
+    <p>Please Create an Account </p>
+    <Router>
+      <div>
+        <nav>
+          <Link to="/signup">Signup</Link>
+        </nav>
+        <Route path="/signup" component={Signup} />
+      </div>
+    </Router>
     or
-    <p>
-      Login if you already have an Account{" "}
-      <Router>
-        <div>
-          <nav>
-            <Link to="/login">Login</Link>
-          </nav>
-          <Route path="/login" component={Login} />
-        </div>
-      </Router>
-    </p>
+    <p>Login if you already have an Account</p>
+    <Router>
+      <div>
+        <nav>
+          <Link to="/Login">Login</Link>
+        </nav>
+        <Route path="/login" component={Login} />
+      </div>
+    </Router>
     <hr />
   </div>
 );
