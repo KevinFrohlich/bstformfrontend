@@ -33,10 +33,8 @@ class AdminEditUser extends Component {
               <p>
                 Name: {user.FirstName} {user.LastName}
               </p>
-              <p>Username: {user.Userame}</p>
+              <p>Username: {user.Username}</p>
               <p>Email: {user.Email}</p>
-              <p>Employee #: {user.EmployeeNumber}</p>
-              <p>Admin: {user.Admin}</p>
             </li>
           </ul>
         ))
@@ -50,7 +48,7 @@ class AdminEditUser extends Component {
       <div className="grid">
         <div className="col-1-3">
           <div>
-            <h2>Employee Information:</h2>
+            <h2>Users:</h2>
           </div>
           <div className="col-2-3">
             <ul>{this.state.Users}</ul>
