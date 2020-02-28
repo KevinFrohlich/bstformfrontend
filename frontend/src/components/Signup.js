@@ -21,7 +21,7 @@ class Signup extends Component {
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  //set form input data to form value
   handleFirstChange = event => {
     this.setState({
       FirstName: event.target.value
@@ -51,7 +51,7 @@ class Signup extends Component {
       Password: event.target.value
     });
   };
-
+  //Post form input data to the backend server/ database.
   handleSubmit = async event => {
     event.preventDefault();
     try {
@@ -75,6 +75,7 @@ class Signup extends Component {
         Password
       })
       .then(res => {
+        //acknowledge is sign up worked and redirect the user to the login page.
         alert("Sign up successfull, Please Login.");
         this.props.history.push("/login");
       });
@@ -84,6 +85,7 @@ class Signup extends Component {
       [key]: event.target.value
     });
   }
+  // render form on signup page
   render() {
     return (
       <div className="grid">
@@ -156,7 +158,6 @@ class Signup extends Component {
             </form>
           </React.Fragment>
         </div>
-        <hr />
       </div>
     );
   }

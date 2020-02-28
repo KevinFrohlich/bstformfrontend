@@ -1,49 +1,45 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { getJwt } from "./helpers/jwt";
 
-export default class Authentication extends Component {
+class Authentication extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: undefined
+    };
+  }
+  // If JWT token is missing after mounting send back to login page.
+  componentDidMount() {
+    const jwt = getJwt();
+    if (!jwt) {
+      this.props.history.push("/Login");
+    }
+    axios
+      .get("http://localhost:3001/users/getUser", {
+        headers: { Authorization: `Bearer ${jwt}` }
+      })
+      .then(res =>
+        this.setState({
+          user: res.data
+        })
+      )
+      // If there is an error then remove the JWT token from the localstorage and send user back to login.
+      .catch(err => {
+        localStorage.removeItem("jwt");
+        this.props.history.push("/Login");
+      });
+  }
   render() {
-    return <div>Authentication Page</div>;
+    if (this.state.user === undefined) {
+      return (
+        <div>
+          <h1>Loading...</h1>
+        </div>
+      );
+    }
+    return <div>{this.props.children}</div>;
   }
 }
-
-// import React, { Component } from "react";
-// import axios from "axios";
-// import { getJWT } from "./helpers/Jwt";
-
-// class Authentication extends Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       user: undefined
-//     };
-//   }
-
-//   componentDidMount() {
-//     const jwt = getJwt();
-//     if (!jwt) {
-//       this.props.history.push("/Login");
-//     }
-//     axios
-//       .get("apiUrl + /users/?", { headers: { Authorization: `Bearer ${jwt}` } })
-//       .then(res =>
-//         ressetState({
-//           user: res.data
-//         })
-//       )
-//       .catch(err => {
-//         localStorage.removeItem("jwt");
-//         this.props.history.push("/Login");
-//       });
-//   }
-//   render() {
-// if (this.state.user == undefined) {
-//     return (
-//         <div><h1>Loading...</h1></div>
-//     );
-// }
-//     return <div>
-//     {this.props.children}
-// </div>;
-//   }
-// }
+export default Authentication;

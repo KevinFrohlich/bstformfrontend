@@ -17,8 +17,12 @@ const Home = () => (
         <Route path="/signup" component={Signup} />
       </div>
     </Router>
-    or
-    <p>Login if you already have an Account</p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>or Login if you already have an Account</p>
     <Router>
       <div>
         <nav>

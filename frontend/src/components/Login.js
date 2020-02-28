@@ -46,7 +46,7 @@ class Login extends Component {
         console.log(res);
         const data = res.data;
         axios.defaults.headers.common["Authorization"] = data;
-        sessionStorage.setItem("token", res.data);
+        localStorage.setItem("jwt", res.data);
         if (data) {
           this.props.history.push("/Profile");
         }

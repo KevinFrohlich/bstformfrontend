@@ -10,6 +10,7 @@ import Editdrafts from "./components/Editdrafts";
 import Editprofile from "./components/Editprofile";
 import Imageupload from "./components/Imageupload";
 import AdminEditUser from "./components/Adminedituser";
+import Authentication from "./components/Authentication";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -35,6 +36,7 @@ const App = () => (
       <Route path="/editprofile" component={Editprofile} />
       <Route path="/imageupload" component={Imageupload} />
       <Route path="/adminedituser" component={AdminEditUser} />
+      <Route path="/authentication" component={Authentication} />
     </div>
   </Router>
 );

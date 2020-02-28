@@ -1,5 +1,3 @@
-//
-
 import React, { Component } from "react";
 import axios from "axios";
 import "../App.css";
@@ -70,7 +68,7 @@ class Posts extends Component {
                 <strong>Post: </strong>
               </p>
               <Link to="/Editposts">
-                <p>{post.Posts}</p>
+                <p>{post.PostId}</p>
                 <button className="butupdate" type="submit" value="submit">
                   Update
                 </button>

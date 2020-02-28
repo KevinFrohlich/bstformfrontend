@@ -7,8 +7,8 @@ class Admin extends Component {
   state = { usersFound: [] };
 
   fetchUsersFound = () => {
-    var encodedURI = "users/admin";
-    return axios.get(encodedURI).then(response => {
+    const apiUrl = "http://localhost:3001/users/admin";
+    return axios.get(apiUrl).then(response => {
       this.setState(() => {
         return {
           usersFound: response.data
